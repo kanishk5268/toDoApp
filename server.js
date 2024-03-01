@@ -15,15 +15,12 @@ dotenv.config({path:'./config.env'});
 
 const DB = process.env.DATABASE;
 mongoose.connect(DB,{
-    useNewUrlParser:true,
-    useCreateIndex:true,
-    useFindAndModify:false
 }).then(()=> console.log('DB connection successful'));
 
 
 //Server
 
-const port = process.env.PORT||3000;
+const port = process.env.PORT;
 const server = app.listen(port,()=>{
     console.log(`App running on port ${port}`);
 });
